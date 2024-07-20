@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typewriter Effect with Flower Animation</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: exo;
+        background: linear-gradient(to top right, #000000, #35064f);
+        color: pink;
+        text-align: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .container {
+        height: 100%;
+      }
+
+      .typewriter-container {
+        padding-top: 10em;
+        position: relative;
+        z-index: 2;
+      }
+
+      .typewrite > .wrap {
+        border-right: 0.08em solid #fff;
+      }
+
+      a {
+        color: pink;
+        text-decoration: none;
+      }
+
+      .flower-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+      }
+
+      .flower {
+        display: grid;
+        grid-template-columns: repeat(6, 50px);
+        grid-template-rows: repeat(6, 50px);
+      }
+
+      .big-petal,
+      .small-petal {
+        animation: showPetals 4s linear infinite;
+      }
+
+      .big-petal {
+        background: linear-gradient(to bottom, rgba(178, 10, 44, 0.4), rgba(255, 251, 213, .2));
+        opacity: 0;
+      }
+
+      .small-petal {
+        background-image: linear-gradient(to left, rgba(247, 112, 98, .8) 0%, rgba(254, 81, 150, .6) 100%);
+        opacity: 0;
+      }
+
+      .big-petal1 {
+        border-radius: 100% 0;
+        box-shadow: 0 2.75em 4.5em rgba(0, 0, 0, .2);
+        grid-column: 4/-1;
+        grid-row: 1/4;      
+      }
+
+      .big-petal2 {
+        animation-delay: 200ms;
+        box-shadow: 2.75em 0 4.5em rgba(0,0,0,.2);
+        border-radius: 0 100%;
+        grid-column: 4/-1;
+        grid-row: 4/-1;
+      }
+
+      .big-petal3 {
+        animation-delay: 400ms;
+        border-radius: 100% 0;
+        box-shadow: 0 -2.75em 4.5em rgba(0,0,0,.2);
+        grid-column: 1/4;
+        grid-row: 4 / -1;      
+      }
+
+      .big-petal4 {
+        animation-delay: 600ms;
+        border-radius: 0 100%;
+        box-shadow: -2.75em 0 4.5em rgba(0,0,0,.2);
+        grid-column: 1/4;
+        grid-row: 1/4;
+      }
+
+      .small-petal1 {
+        animation-delay: 800ms;
+        border-radius: 100% 0; 
+        grid-column: 4/6;
+        grid-row: 2/4;
+      }
+
+      .small-petal2 {
+        animation-delay: 1000ms;
+        border-radius: 100% 0;
+        grid-column: 4/6;
+        grid-row: 3/5;
+        transform: rotate(45deg) translate(0.8rem, -0.8rem);
+      }
+
+      .small-petal3 {
+        animation-delay: 1200ms;
+        border-radius: 0 100%;
+        grid-column: 4/6;
+        grid-row: 4/6;
+      }
+
+      .small-petal4 {
+        animation-delay: 1400ms;
+        border-radius: 100% 0;
+        grid-column: 3/5;
+        grid-row: 3/5;
+        transform: rotate(135deg) translate(3.2rem, -3.2rem);
+      }
+
+      .small-petal5 {
+        animation-delay: 1600ms;
+        border-radius: 100% 0;
+        grid-column: 2/4;
+        grid-row: 4/6;
+      }
+
+      .small-petal6 {
+        animation-delay: 1800ms;
+        border-radius: 100% 0;
+        grid-column: 2/4;
+        grid-row: 3/5;
+        transform: rotate(45deg) translate(-0.6rem, 0.6rem);
+      }
+
+      .small-petal7 {
+        animation-delay: 2000ms;
+        border-radius: 0 100%;
+        grid-column: 2/4;
+        grid-row: 2/4;
+      }
+
+      .small-petal8 {
+        animation-delay: 2200ms;
+        border-radius: 100% 0;
+        grid-column: 3/5;
+        grid-row: 1/3;
+        transform: rotate(135deg) translate(1.7rem, -1.7rem);
+      }
+
+      @keyframes showPetals {
+        0% {opacity: 0;}
+        50% {opacity: 1;}
+        100% {opacity: 0;}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 typewriter-container">
+          <h1>
+            <a
+              href=""
+              class="typewrite"
+              data-period="2000"
+              data-type='["LS", "Hi", "Always take care of your health", "May Allah always give you and your family good health"]'
+            >
+              <span class="wrap"></span>
+            </a>
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <main class="flower-content">
+            <section class="flower">
+              <div class="big-petal big-petal1"></div>
+              <div class="big-petal big-petal2"></div>
+              <div class="big-petal big-petal3"></div>
+              <div class="big-petal big-petal4"></div>
+              <div class="small-petal small-petal1"></div>
+              <div class="small-petal small-petal2"></div>
+              <div class="small-petal small-petal3"></div>
+              <div class="small-petal small-petal4"></div>
+              <div class="small-petal small-petal5"></div>
+              <div class="small-petal small-petal6"></div>
+              <div class="small-petal small-petal7"></div>
+              <div class="small-petal small-petal8"></div>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var TxtType = function (el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = "";
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtType.prototype.tick = function () {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) {
+          delta /= 2;
+        }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === "") {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function () {
+          that.tick();
+        }, delta);
+      };
+
+      window.onload = function () {
+        var elements = document.getElementsByClassName("typewrite");
+        for (var i = 0; i < elements.length; i++) {
+          var toRotate = elements[i].getAttribute("data-type");
+          var period = elements[i].getAttribute("data-period");
+          if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
+          }
+        }
+      };
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
